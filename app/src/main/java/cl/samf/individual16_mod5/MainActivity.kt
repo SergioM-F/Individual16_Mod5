@@ -30,7 +30,7 @@ import cl.samf.individual16_mod5.databinding.ActivityMainBinding
 
 * */
 * */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterPaises.PaisCallBack {
     lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity() {
     private fun initAdapter() {
         val adapterPaises = AdapterPaises()
         adapterPaises.setData(PaisesLatam.paises)
+        adapterPaises.setPaisCallBack(this)
         binding.recyclerView.adapter = adapterPaises
+
     }
+
+    override fun showPais(s: String) {
+        binding.textViewMostrarInfo.text = s
+    }
+
 }
