@@ -13,9 +13,6 @@ class AdapterPaises : RecyclerView.Adapter <AdapterPaises.ViewHolder>() {
 
     var paises = mutableListOf<Pais>()
     var callBack: PaisCallBack ?=null
-    fun setPaisCallBack(c:PaisCallBack){
-        this.callBack = c
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterPaises.ViewHolder {
         var binding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), AdapterPaises.PaisCallBack {
     private fun initAdapter() {
         val adapterPaises = AdapterPaises()
         adapterPaises.setData(PaisesLatam.paises)
-        adapterPaises.setPaisCallBack(this)
+        adapterPaises.callBack = this
         binding.recyclerView.adapter = adapterPaises
 
     }
